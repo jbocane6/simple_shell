@@ -17,8 +17,8 @@ void _strtok(char *str, const char *delim)
             args++;
     }
 
-    exp = (char **) malloc(sizeof(char) * args);
-    if (!*exp)
+    exp = malloc(sizeof(*exp) * args);
+    if (!exp)
     {
         printf("ERROR malloc 1");
         exit(100);
@@ -31,6 +31,7 @@ void _strtok(char *str, const char *delim)
         exit(100);
     }
 
+    i = 0;
     while (str[j])
     {
         if (str[j] != *delim)
@@ -40,7 +41,7 @@ void _strtok(char *str, const char *delim)
         }
         else
         {
-            exp[l] = (char *) malloc(sizeof(char) * i);
+            exp[l] = malloc(sizeof(char *) * i + 1);
             if (!exp[l])
             {
                 printf("ERROR malloc 3");
@@ -48,6 +49,7 @@ void _strtok(char *str, const char *delim)
             }
             for (k = 0; k < i; k++)
                 exp[l][k] = cpStr[k];
+            exp[l][k] = '\0';
             l++;
             i = 0;
         }
@@ -55,16 +57,17 @@ void _strtok(char *str, const char *delim)
     }
     if (i > 0)
     {
-        exp[l] = (char *) malloc(sizeof(char) * i);
-            if (!exp[l])
-            {
-                printf("ERROR malloc 4");
-                exit(100);
-            }
-            for (k = 0; k < i; k++)
-                exp[l][k] = cpStr[k];;
-            l++;
-            i = 0;
+        exp[l] = malloc(sizeof(char *) * i + 1);
+        if (!exp[l])
+        {
+            printf("ERROR malloc 4");
+            exit(100);
+        }
+        for (k = 0; k < i; k++)
+            exp[l][k] = cpStr[k];
+        exp[l][k] = '\0';
+        l++;
+        i = 0;
     }
     for (k = 0; i < args; k++)
     {
