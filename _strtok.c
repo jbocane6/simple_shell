@@ -5,11 +5,11 @@
 
 #define err STDOUT_FILENO
 
-void _strtok(char *str, const char *delim)
+char ** _strtok(char *str, const char *delim)
 {
-    char *cpStr, *arg;
+    char *cpStr;
     char **exp;
-    int i = 0, j = 0, size = 0, k, l = 0, args = 1;
+    int i = 0, j = 0, k, l = 0, args = 1;
 
     for (i = 0; str[i]; i++)
     {
@@ -17,7 +17,7 @@ void _strtok(char *str, const char *delim)
             args++;
     }
 
-    exp = malloc(sizeof(*exp) * args);
+    exp = malloc(sizeof(char *) * args + 1);
     if (!exp)
     {
         printf("ERROR malloc 1");
@@ -41,7 +41,7 @@ void _strtok(char *str, const char *delim)
         }
         else
         {
-            exp[l] = malloc(sizeof(char *) * i + 1);
+            exp[l] = malloc(sizeof(char) * i + 1);
             if (!exp[l])
             {
                 printf("ERROR malloc 3");
@@ -57,7 +57,7 @@ void _strtok(char *str, const char *delim)
     }
     if (i > 0)
     {
-        exp[l] = malloc(sizeof(char *) * i + 1);
+        exp[l] = malloc(sizeof(char) * i + 1);
         if (!exp[l])
         {
             printf("ERROR malloc 4");
@@ -69,15 +69,16 @@ void _strtok(char *str, const char *delim)
         l++;
         i = 0;
     }
-    for (k = 0; i < args; k++)
-    {
-        printf("%s\t", (char *)exp[k]);
-    }
+    exp[l] = '\0';
+    return (exp);
     
 }
 
 int main(int argc, char *argv[])
 {
+    int k;
+    char **exp;
+
     if (argc != 3)
     {
         printf("ERROR");
@@ -89,6 +90,10 @@ int main(int argc, char *argv[])
         printf("ERROR ARGVS");
         exit(99);
     }
-    _strtok(argv[1], argv[2]);
+    exp = _strtok(argv[1], argv[2]);
+    for (k = 0; exp[k]; k++)
+    {
+        printf("%s\t", exp[k]);
+    }
     return (0);
 }
