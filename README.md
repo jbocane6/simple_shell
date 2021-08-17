@@ -2,7 +2,7 @@
     <a href=#><img src="https://raw.githubusercontent.com/jbocane6/logos/main/holberton-logo.png" alt="holberton" /></a></p>
   
   <p align="center">
-    <img align="center" src="https://avatars.githubusercontent.com/u/72631957?v=4" alt="Andres Castañeda" height="120" width="120" />
+    <img align="center" src="https://avatars.githubusercontent.com/u/72631957?v=4" alt="Andres Castañeda" height="100" width="100" />
     <a href="https://twitter.com/YxAndres" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="twitter Andres" height="30" width="40" /></a>
     <a href="https://www.linkedin.com/in/andres-castañeda-1426ab197/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="Linkedin Andres" height="30" width="40" /></a>
     <a href="https://github.com/4ndr3sxy" target="blank"><img align="center" src="https://raw.githubusercontent.com/devicons/devicon/9f4f5cdb393299a81125eb5127929ea7bfe42889/icons/github/github-original.svg" alt="Github Andres" height="30" width="40" /></a>
@@ -12,17 +12,17 @@
     <a href="https://linkedin.com/in/juan-camilo-bocanegra-osorio-18b1821a6" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="juan-camilo-bocanegra-osorio-18b1821a6" height="30" width="40" /></a>
     <a href="https://github.com/jbocane6" target="blank"><img align="center" src="https://raw.githubusercontent.com/devicons/devicon/9f4f5cdb393299a81125eb5127929ea7bfe42889/icons/github/github-original.svg" alt="Github juan" height="30" width="40" /></a>
     &emsp;&emsp;&emsp;
-    <img align="center" src="" alt="David Latorre" height="120" width="120" />
-    <a href="" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="twitter David" height="30" width="40" /></a>
-    <a href="" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="Linkedin David" height="30" width="40" /></a>
-    <a href="" target="blank"><img align="center" src="https://raw.githubusercontent.com/devicons/devicon/9f4f5cdb393299a81125eb5127929ea7bfe42889/icons/github/github-original.svg" alt="Github David" height="30" width="40" /></a>
+    <img align="center" src="https://avatars.githubusercontent.com/u/37098293?v=4" alt="David Latorre" height="100" width="100" />
+    <a href="https://twitter.com/DavidLa74296325" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="twitter David" height="30" width="40" /></a>
+    <a href="https://www.linkedin.com/in/david-latorre-886529203/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="Linkedin David" height="30" width="40" /></a>
+    <a href="https://github.com/Byakko12" target="blank"><img align="center" src="https://raw.githubusercontent.com/devicons/devicon/9f4f5cdb393299a81125eb5127929ea7bfe42889/icons/github/github-original.svg" alt="Github David" height="30" width="40" /></a>
     </p>  
   <br>
   <p align="center">
     <a href=#><img src="https://raw.githubusercontent.com/jbocane6/logos/main/titulo3.png" alt="titulo" /></a></p>
 
 # PRINT FORMATTED: simple_shell
-shell function project performed by  &amp; Juan Bocanegra  &amp; & .
+shell function project performed by Andrés Felipe Castañeda, Juan Bocanegra  &amp; Juan David Latorre.
 
 
 
