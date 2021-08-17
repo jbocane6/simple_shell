@@ -5,6 +5,22 @@
 
 #define err STDOUT_FILENO
 
+void grid(char **exp, char *cpStr, int *l, int *i)
+{
+    int k;
+    exp[*l] = malloc(sizeof(char) * (*i + 1));
+    if (!exp[*l])
+    {
+        printf("ERROR malloc 3");
+        exit(100);
+    }
+    for (k = 0; k < *i; k++)
+        exp[*l][k] = cpStr[k];
+    exp[*l][k] = '\0';
+    *l += 1;
+    *i = 0;
+}
+
 char ** _strtok(char *str, const char *delim)
 {
     char *cpStr;
@@ -40,35 +56,11 @@ char ** _strtok(char *str, const char *delim)
             i++;
         }
         else
-        {
-            exp[l] = malloc(sizeof(char) * i + 1);
-            if (!exp[l])
-            {
-                printf("ERROR malloc 3");
-                exit(100);
-            }
-            for (k = 0; k < i; k++)
-                exp[l][k] = cpStr[k];
-            exp[l][k] = '\0';
-            l++;
-            i = 0;
-        }
+            grid(exp, cpStr, &l, &i);
         j++;
     }
     if (i > 0)
-    {
-        exp[l] = malloc(sizeof(char) * i + 1);
-        if (!exp[l])
-        {
-            printf("ERROR malloc 4");
-            exit(100);
-        }
-        for (k = 0; k < i; k++)
-            exp[l][k] = cpStr[k];
-        exp[l][k] = '\0';
-        l++;
-        i = 0;
-    }
+        grid(exp, cpStr, &l, &i);
     exp[l] = '\0';
     return (exp);
     
