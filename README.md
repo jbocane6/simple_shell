@@ -2,10 +2,10 @@
     <a href=#><img src="https://raw.githubusercontent.com/jbocane6/logos/main/holberton-logo.png" alt="holberton" /></a></p>
   
   <p align="center">
-    <img align="center" src="" alt="Andres Castañeda" height="120" width="120" />
-    <a href="" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="twitter Andres" height="30" width="40" /></a>
-    <a href="" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="Linkedin Andres" height="30" width="40" /></a>
-    <a href="" target="blank"><img align="center" src="https://raw.githubusercontent.com/devicons/devicon/9f4f5cdb393299a81125eb5127929ea7bfe42889/icons/github/github-original.svg" alt="Github Andres" height="30" width="40" /></a>
+    <img align="center" src="https://avatars.githubusercontent.com/u/72631957?v=4" alt="Andres Castañeda" height="120" width="120" />
+    <a href="https://twitter.com/YxAndres" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="twitter Andres" height="30" width="40" /></a>
+    <a href="https://www.linkedin.com/in/andres-castañeda-1426ab197/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="Linkedin Andres" height="30" width="40" /></a>
+    <a href="https://github.com/4ndr3sxy" target="blank"><img align="center" src="https://raw.githubusercontent.com/devicons/devicon/9f4f5cdb393299a81125eb5127929ea7bfe42889/icons/github/github-original.svg" alt="Github Andres" height="30" width="40" /></a>
     &emsp;&emsp;&emsp;
     <img align="center" src="https://raw.githubusercontent.com/jbocane6/logos/main/foto.png" alt="juan" />
     <a href="https://twitter.com/juanoso07555284" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="juanoso07555284" height="30" width="40" /></a>
