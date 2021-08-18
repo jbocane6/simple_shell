@@ -74,7 +74,7 @@ For better understanding you can access the logic behind the program as follows:
 
 
 <flowchart _printf>
-<a href=#><img src="https://raw.githubusercontent.com/jbocane6/logos/main/Diagram_printf_function.png" /></a>
+<a href=#><img src="https://raw.githubusercontent.com/jbocane6/logos/main/simple%20shell.png" /></a>
 
 <flowchart _printspecials>
 
