@@ -8,6 +8,22 @@
 #define DELIM " "
 
 void grid(char **exp, char *cpStr, int *l, int *i);
-char **_strtok(char *str, const char *delim);
 
+extern char **environ;
+
+int include_char(char *str, char character);
+
+int count_until(char *strUntil, char *str);
+
+int count_words(char *strDelim, char *str);
+
+char **_strtok(char *str, char *delim);
+
+void arrayFree(char array);
+
+int _getline(char lineptr, int *lineptrSize);
+
+char *_realloc(char *, unsigned int, unsigned int);
+
+char *get_environ(char *pathName);
 #endif
