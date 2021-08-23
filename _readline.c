@@ -1,18 +1,20 @@
-#define _GNU_SOURCE
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include "holberton.h"
+
+void ctrap(int sig)
+{
+	write(1, "\n", sig - 1);
+	write(1, "$ ", 2);
+}
 
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *newSizeMemory = NULL;
-	int i = 0;
+	unsigned int i = 0;
 
 	if (old_size == new_size)
 		return (ptr);
 	if (ptr == NULL)
 	{
-		free(ptr);
 		ptr = malloc(new_size);
 		return (ptr);
 	}
@@ -36,11 +38,13 @@ char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size)
 	return (newSizeMemory);
 }
 
-int _getline(char **lineptr, int *lineptrSize)
+int readline(char **lineptr, int *lineptrSize)
 {
+	(void)signal(SIGINT, ctrap);
 	int i = 0, valRead = 0;
 	char character = 0;
 
+	write(1, "$ ", 2);
 	*lineptr = malloc(sizeof(char) * *lineptrSize);
 	if (!lineptr)
 	{
@@ -63,16 +67,5 @@ int _getline(char **lineptr, int *lineptrSize)
 		}
 	}
 	(*lineptr)[i - 1] = '\0';
-	return (i);
+	return (i - 1);
 }
-/*
-int main(void)
-{
-	char *buffer = NULL;
-	int size = 1024;
-	int val = _getline(&buffer, &size);
-
-	free(buffer);
-	return (0);
-}
-*/

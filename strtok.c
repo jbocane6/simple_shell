@@ -1,37 +1,87 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "holberton.h"
 
-int main(int argc, char *argv[])
+#define TEST_TOK
+
+int include_char(char *str, char character)
 {
-    char *str1, *str2, *token, *subtoken;
-    char *saveptr1, *saveptr2;
-    int j;
+	if (!str || !*str)
+		return (0);
+	if (*str == character)
+		return (1);
+	return (include_char(str + 1, character));
+}
 
-    if (argc != 4)
-    {
-        fprintf(stderr, "Usage: %s string delim subdelim\n",
-                argv[0]);
-        exit(EXIT_FAILURE);
-    }
+int count_until(char *strUntil, char *str)
+{
+	if (!strUntil || !*strUntil || !str || !*str)
+		return (0);
+	if (!include_char(strUntil, *str))
+		return (1 + count_until(strUntil, str + 1));
+	return (0);
+}
 
-    for (j = 1, str1 = argv[1];; j++, str1 = NULL)
-    {
-        token = strtok_r(str1, argv[2], &saveptr1);
-        printf("## %s %d##", token, j);
-        if (token == NULL)
-            break;
-        printf("%d: %s\n", j, token);
+char *cp_until(char *strUntil, char *strToCopy)
+{
+	int count = count_until(strUntil, strToCopy), i = 0;
+	char *newStr = malloc(sizeof(char) * count + 1);
 
-        for (str2 = token;; str2 = NULL)
-        {
-            subtoken = strtok_r(str2, argv[3], &saveptr2);
-            if (subtoken == NULL)
-                break;
-            printf(" --> %s\n", subtoken);
-        }
-    }
+	if (!newStr)
+		return (NULL);
 
-    exit(EXIT_SUCCESS);
-    return(0);
+	for (i = 0; i < count; i++)
+		newStr[i] = strToCopy[i];
+	newStr[i] = '\0';
+	return (newStr);
+}
+
+int count_words(char *strDelim, char *str)
+{
+	if (!str || !*str || !strDelim || !*strDelim)
+	{
+		return (0);
+	}
+	if (!include_char(strDelim, *str))
+	{
+		int sizeWorld = count_until(strDelim, str);
+		return (1 + count_words(strDelim, str + sizeWorld));
+	}
+	return (count_words(strDelim, str + 1));
+}
+
+char **_strtok(char *str, char *delim)
+{
+	char **arrayWords = NULL;
+	int indexWords = 0;
+	int sizeWords = 0, i = 0;
+
+	if (!str || !delim)
+		return (NULL);
+	sizeWords = count_words(delim, str);
+	arrayWords = malloc(sizeof(char *) * (sizeWords + 1));
+	if (!arrayWords)
+		dprintf(err, "ERROR malloc 1"), exit(100);
+
+	while (str[i])
+	{
+		if (!include_char(delim, str[i]))
+		{
+			arrayWords[indexWords] = cp_until(delim, str + i);
+			i += count_until(delim, str + i);
+			indexWords++;
+		}
+		else
+			i++;
+	}
+	arrayWords[indexWords] = NULL;
+	return (arrayWords);
+}
+
+void arrayFree(char **array)
+{
+	if (!array || !*array)
+	{
+		return;
+	}
+	arrayFree(array + 1);
+	free(*array);
 }
