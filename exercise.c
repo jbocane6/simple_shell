@@ -2,13 +2,30 @@
 
 extern char **environ;
 
-int validateMainFunctions(char **strfather)
+void freestr(char **strfather, char *strReceived)
 {
-	int i = 0;
+	arrayFree(strfather);
+	free(strfather);
+	free(strReceived);
+}
+
+int validateMainFunctions(char **strfather, char *strReceived, int character)
+{
+	int i = character;
 
 	if (strcmp(strfather[0], "exit") == 0)
 	{
-		exit(atoi(strfather[1]));
+		if (i > 1)
+		{
+			i = _atoi(strfather[1]);
+			freestr(strfather, strReceived);
+			exit(i);
+		}
+		else
+		{
+			freestr(strfather, strReceived);
+			exit(0);
+		}
 	}
 	if (strcmp(strfather[0], "cd") == 0)
 	{
@@ -77,12 +94,12 @@ int main(void)
 		character = readline(&strReceived, &size);
 		if (character > 0)
 		{
+			character = count_words(DELIM, strReceived);
 			strfather = _strtok(strReceived, DELIM);
-			flag = validateMainFunctions(strfather);
-			arrayFree(strfather);
-			free(strfather);
-			free(strReceived);
+			flag = validateMainFunctions(strfather, strReceived, character);
+			freestr(strfather, strReceived);
 		}
+		freestr(strfather, strReceived);
 	}
 	return (flag);
 }

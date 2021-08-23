@@ -35,7 +35,8 @@ int statPath(char **strfather);
 int callExe(char **strfather);
 char *get_environ(char *pathName);
 char *combine(char *command, char **splitPath);
-int validateMainFunctions(char **strfather);
+int validateMainFunctions(char **strfather, char *strReceived, int character);
 void arrayFree(char **array);
+int _atoi(char *s);
 
 #endif
