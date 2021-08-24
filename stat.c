@@ -37,6 +37,12 @@ void print_number(int n)
 	}
 }
 
+/**
+ * statPath - recieve the command with or without i'ts path and
+ * return the call to the function callExe (execve)
+ * @strfather: double pointer type char type parent to be evaluated
+ * Return: return call to the function or 1 if it fails
+ */
 int statPath(char **strfather, int loops, int flag)
 {
 	struct stat st;
@@ -65,6 +71,12 @@ int statPath(char **strfather, int loops, int flag)
 	return (1);
 }
 
+/**
+ * callExe - fork a child to avoid execve to terminate main process
+ * when run the commands
+ * @strfather: double pointer type char type parent to be evaluated
+ * Return: if child wasn't created return -1, 1 if  it was succeed
+ */
 int callExe(char **strfather)
 {
 	char stringDir[1024];
