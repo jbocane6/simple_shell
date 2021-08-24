@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-int statPath(char **strfather)
+int statPath(char **strfather, int loops, int flag)
 {
 	struct stat st;
 	/* validate if deault command is absolute path */
@@ -12,8 +12,19 @@ int statPath(char **strfather)
 	else
 	{
 		strfather[0] = combine(strfather[0], _strtok(get_environ("PATH"), ":"));
-		if (strfather[0])
-			return (statPath(strfather));
+		if (strfather[0] && !flag)
+		{
+			return (statPath(strfather, loops, 1));
+		}
+		else
+		{
+			int a = 5;
+			write(1, "sh: ", 4);
+			write(1, &a, sizeof(a));
+			write(1, ": ", 2);
+			write(1, strfather[0], _strlen(strfather[0]));
+			write(1, ": not found\n", 12);
+		}
 	}
 	return (1);
 }

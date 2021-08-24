@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	int cfather, flag = 1, size = 1024, character = 0;
+	int cfather, flag = 1, size = 1024, character = 0, loops = 1;
 
 	while (flag > 0 && flag < 2)
 	{
@@ -13,9 +13,10 @@ int main(void)
 		{
 			character = count_words(DELIM, strReceived);
 			strfather = _strtok(strReceived, DELIM);
-			flag = validateMainFunctions(strfather, strReceived, character);
+			flag = validateMainFunctions(strfather, strReceived, character, loops);
 		}
 		freestr(strfather, strReceived);
+		loops++;
 	}
 	return (flag);
 }

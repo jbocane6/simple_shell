@@ -2,7 +2,7 @@
 
 extern char **environ;
 
-int validateMainFunctions(char **strfather, char *strReceived, int character)
+int validateMainFunctions(char **strfather, char *strReceived, int character, int loops)
 {
 	int i = character;
 
@@ -34,7 +34,7 @@ int validateMainFunctions(char **strfather, char *strReceived, int character)
 		}
 		return (1); /*no es exit?*/
 	}
-	return (statPath(strfather));
+	return (statPath(strfather, loops, 0));
 }
 
 char *get_environ(char *pathName)
