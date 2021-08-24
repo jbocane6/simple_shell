@@ -50,8 +50,7 @@ char *concatPlusPlus(int nVariables, ...)
 
 char *combine(char *command, char **splitPath)
 {
-	int i = 0, j = 0, k = 0, sizeCommand, sizeSplitPath;
-	int sizeTotal, flag = 0, flag2 = 0;
+	int i = 0;
 	struct stat st;
 	char *commandCombine;
 

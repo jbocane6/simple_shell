@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	int cfather, flag = 1, size = 1024, character = 0, loops = 1;
+	int flag = 1, size = 1024, character = 0, loops = 1;
 
 	while (flag > 0 && flag < 2)
 	{

@@ -21,9 +21,9 @@ int _strlen(char *s)
 
 int _atoi(char *s)
 {
-	int numero = 0;
+	int numero = 0, i;
 
-	for (int i = 0; s[i]; i++)
+	for (i = 0; s[i]; i++)
 		numero = (numero * 10) + (s[i] - '0');
 	return (numero);
 }

@@ -38,10 +38,10 @@ char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size)
 
 int readline(char **lineptr, int *lineptrSize)
 {
-	(void)signal(SIGINT, ctrap);
 	int i = 0, valRead = 0;
 	char character = 0;
 
+	(void)signal(SIGINT, ctrap);
 	write(1, "$ ", 2);
 	*lineptr = malloc(sizeof(char) * *lineptrSize);
 	if (!lineptr)
