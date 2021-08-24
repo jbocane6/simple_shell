@@ -1,5 +1,42 @@
 #include "holberton.h"
 
+/**
+ * print_number - called to main()
+ * @n: number to convert
+ * Return: withour return
+ */
+void print_number(int n)
+{
+	int n1 = n;
+	int arr[sizeof(int) * 8];
+	int i = 0;
+	int j, r;
+
+	if (n != 0)
+	{
+		while (n != 0)
+		{
+			r = n % 10;
+			arr[i] = r;
+			i++;
+			n = n / 10;
+		}
+		for (j = i - 1; j > -1; j--)
+		{
+			if (n1 < -2147483647)
+			{
+				int val = arr[j] * -1;
+
+				_putchar(val + '0');
+			}
+			else
+			{
+				_putchar(arr[j] + '0');
+			}
+		}
+	}
+}
+
 int statPath(char **strfather, int loops, int flag)
 {
 	struct stat st;
@@ -18,9 +55,8 @@ int statPath(char **strfather, int loops, int flag)
 		}
 		else
 		{
-			int a = 5;
 			write(1, "sh: ", 4);
-			write(1, &a, sizeof(a));
+			print_number(loops);
 			write(1, ": ", 2);
 			write(1, strfather[0], _strlen(strfather[0]));
 			write(1, ": not found\n", 12);
