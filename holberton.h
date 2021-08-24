@@ -16,7 +16,7 @@
 #define SIZE_SLASH (1)
 #define SIZE_NULL (1)
 #define out STDOUT_FILENO
-#define DELIM " "
+#define DELIM " \""
 
 /**/
 int _strlen(char *s);
@@ -38,7 +38,7 @@ char **_strtok(char *str, char *delim);
 /**/
 int readline(char **lineptr, int *lineptrSize);
 /**/
-int statPath(char **strfather);
+int statPath(char **strfather, int, int);
 /**/
 int callExe(char **strfather);
 /**/
@@ -46,7 +46,7 @@ char *get_environ(char *pathName);
 /**/
 char *combine(char *command, char **splitPath);
 /**/
-int validateMainFunctions(char **strfather, char *strReceived, int character);
+int validateMainFunctions(char **strfather, char *strReceived, int character, int);
 /**/
 void arrayFree(char **array);
 /**/
