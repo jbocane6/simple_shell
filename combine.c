@@ -1,11 +1,37 @@
 #include "holberton.h"
 
+/**
+ * _strcat - concatenates two strings
+ * @dest: chain initial
+ * @src: chain to join with *dest
+ * Return: return pointer a dest
+ */
+char *_strcat(char *dest, char *src)
+{
+	int i = 0, j = 0, sizeDest = 0;
+	char *concat = dest;
+
+	while (dest[i] != '\0')
+	{
+		sizeDest++;
+		i++;
+	}
+	while (src[j] != '\0')
+	{
+		dest[sizeDest + j] = src[j];
+		j++;
+	}
+	dest[sizeDest + j] = src[j];
+
+	return (concat);
+}
+
 char *concatPlusPlus(int nVariables, ...)
 {
-	char buffer[1024];
-	int i;
-	char *string = NULL;
+	int i = 0;
+	char buffer[1024], *string = NULL;
 	va_list list;
+
 	va_start(list, nVariables);
 
 	for (i = 0; nVariables > 0; nVariables--)
@@ -28,6 +54,7 @@ char *combine(char *command, char **splitPath)
 	int sizeTotal, flag = 0, flag2 = 0;
 	struct stat st;
 	char *commandCombine;
+
 	while (splitPath[i])
 	{
 		commandCombine = concatPlusPlus(3, splitPath[i], "/", command);

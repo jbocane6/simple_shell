@@ -31,9 +31,7 @@ char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size)
 		return (NULL);
 	}
 	for (i = 0; i < old_size; i++)
-	{
 		newSizeMemory[i] = ptr[i];
-	}
 	free(ptr);
 	return (newSizeMemory);
 }
@@ -47,9 +45,7 @@ int readline(char **lineptr, int *lineptrSize)
 	write(1, "$ ", 2);
 	*lineptr = malloc(sizeof(char) * *lineptrSize);
 	if (!lineptr)
-	{
 		return (-1);
-	}
 	while (character != '\n')
 	{
 		valRead = read(STDIN_FILENO, &character, 1);

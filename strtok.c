@@ -1,7 +1,5 @@
 #include "holberton.h"
 
-#define TEST_TOK
-
 int include_char(char *str, char character)
 {
 	if (!str || !*str)
@@ -37,12 +35,11 @@ char *cp_until(char *strUntil, char *strToCopy)
 int count_words(char *strDelim, char *str)
 {
 	if (!str || !*str || !strDelim || !*strDelim)
-	{
 		return (0);
-	}
 	if (!include_char(strDelim, *str))
 	{
 		int sizeWorld = count_until(strDelim, str);
+
 		return (1 + count_words(strDelim, str + sizeWorld));
 	}
 	return (count_words(strDelim, str + 1));
@@ -51,15 +48,14 @@ int count_words(char *strDelim, char *str)
 char **_strtok(char *str, char *delim)
 {
 	char **arrayWords = NULL;
-	int indexWords = 0;
-	int sizeWords = 0, i = 0;
+	int indexWords = 0, sizeWords = 0, i = 0;
 
 	if (!str || !delim)
 		return (NULL);
 	sizeWords = count_words(delim, str);
 	arrayWords = malloc(sizeof(char *) * (sizeWords + 1));
 	if (!arrayWords)
-		dprintf(err, "ERROR malloc 1"), exit(100);
+		dprintf(out, "ERROR malloc 1"), exit(100);
 
 	while (str[i])
 	{
@@ -74,14 +70,4 @@ char **_strtok(char *str, char *delim)
 	}
 	arrayWords[indexWords] = NULL;
 	return (arrayWords);
-}
-
-void arrayFree(char **array)
-{
-	if (!array || !*array)
-	{
-		return;
-	}
-	arrayFree(array + 1);
-	free(*array);
 }
