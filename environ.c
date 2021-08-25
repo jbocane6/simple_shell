@@ -9,9 +9,9 @@ int exitstr(char **strf)
 {
 	int j;
 
-	for (j = 0; strf[0][j]; j++)
+	for (j = 0; strf[1][j]; j++)
 	{
-		if (strf[0][j] < 48 || strf[0][j] > 57)
+		if (strf[1][j] < 48 || strf[1][j] > 57)
 			return (1);
 	}
 	return (0);
