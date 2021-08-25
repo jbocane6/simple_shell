@@ -17,7 +17,7 @@
 #define SIZE_NULL (1)
 #define out STDOUT_FILENO
 #define in STDIN_FILENO
-#define DELIM " "
+#define DELIM " \""
 
 extern char **environ;
 
@@ -65,6 +65,11 @@ char *move_last_until(char *string, char last);
 void print_number(int n);
 /*_strcmp - compares 2 strings and say if are equals*/
 int _strcmp(char *str1, char *str2);
+/*_strstrlen - count the strings of a double pointer to char and return size*/
 int _strstrlen(char **s);
+/* exitstr - verifies if the has only numbers*/
+int exitstr(char **strf);
+
+void buildinexit(char **strf, char *strRecd, int chars, int loo);
 
 #endif

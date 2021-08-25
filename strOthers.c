@@ -40,11 +40,16 @@ int _strlen(char *s)
  */
 int _atoi(char *s)
 {
-	int numero = 0, i;
+	int numero = 0, i = 0, j = 1;
 
-	for (i = 0; s[i]; i++)
+	if (s[0] == '-')
+	{
+		j = -1;
+		i = 1;
+	}
+	for (; s[i]; i++)
 		numero = (numero * 10) + (s[i] - '0');
-	return (numero);
+	return (numero * j);
 }
 
 /**
