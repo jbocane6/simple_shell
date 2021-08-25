@@ -65,7 +65,7 @@ int readline(char **lineptr, int *lineptrSize)
 	char character = 0;
 
 	(void)signal(SIGINT, ctrap);
-	write(1, "$ ", 2);
+	/*write(1, "$ ", 2);*/
 	*lineptr = malloc(sizeof(char) * *lineptrSize);
 	if (!lineptr)
 		return (-1);
