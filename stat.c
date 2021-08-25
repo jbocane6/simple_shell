@@ -65,6 +65,7 @@ int statPath(char **strfather, int loops)
 			write(out, ": ", 2);
 			write(out, strfather[0], _strlen(strfather[0]));
 			write(out, ": not found\n", 12);
+			exit(127);
 		}
 	}
 	return (0);
@@ -96,7 +97,9 @@ int callExe(char **strfather, int validate)
 		if (validate)
 			strfather[0] = move_last_until(strfather[0], '/');
 		if (execve(stringDir, strfather, NULL) == -1)
+		{
 			perror("Error");
+		}
 		exit(0);
 	}
 	else
