@@ -49,14 +49,14 @@ int statPath(char **strfather, int loops)
 	/* example: strfather[0] = /bin/ls */
 	if (stat(strfather[0], &st) == 0)
 	{
-		return (callExe(strfather));
+		return (callExe(strfather, 0));
 	}
 	else
 	{
 		strfather[0] = combine(strfather[0], _strtok(get_environ("PATH"), ":"));
 		if (stat(strfather[0], &st) == 0)
 		{
-			return (callExe(strfather));
+			return (callExe(strfather, 1));
 		}
 		else
 		{
@@ -64,7 +64,7 @@ int statPath(char **strfather, int loops)
 			print_number(loops);
 			write(out, ": ", 2);
 			write(out, strfather[0], _strlen(strfather[0]));
-			write(out, ": not found\n", 12);	
+			write(out, ": not found\n", 12);
 		}
 	}
 	return (0);
@@ -76,7 +76,7 @@ int statPath(char **strfather, int loops)
  * @strfather: double pointer type char type parent to be evaluated
  * Return: if child wasn't created return -1, 1 if  it was succeed
  */
-int callExe(char **strfather)
+int callExe(char **strfather, int validate)
 {
 	char stringDir[1024];
 	int st = 0;
@@ -92,7 +92,8 @@ int callExe(char **strfather)
 	{
 		stringDir[0] = '\0';
 		_strcat(stringDir, strfather[0]);
-		strfather[0] = move_last_until(strfather[0], '/');
+		if (validate)
+			strfather[0] = move_last_until(strfather[0], '/');
 		if (execve(stringDir, strfather, NULL) == -1)
 			perror("Error");
 		exit(0);

@@ -61,7 +61,7 @@ char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size)
  */
 int readline(char **lineptr, int *lineptrSize)
 {
-	int i = 0, valRead = 0;
+	int i = 0, valRead = 0, valFlag = 0;
 	char character = 0;
 
 	(void)signal(SIGINT, ctrap);
@@ -88,6 +88,18 @@ int readline(char **lineptr, int *lineptrSize)
 		}
 	}
 	(*lineptr)[i - 1] = '\0';
+	for (valFlag = 0; (*lineptr)[valFlag]; valFlag++)
+	{
+		if ((*lineptr)[valFlag] != ' ')
+		{
+			break;
+		}
+	}
+	if (!(*lineptr)[valFlag])
+	{
+		(*lineptr)[0] = '\0';
+		return (0);
+	}
 	/* fflush(stdin); */
 	return (i - 1);
 }

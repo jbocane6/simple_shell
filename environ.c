@@ -39,6 +39,7 @@ void buildinexit(char **strf, char *strRecd, int chars, int loo)
 			write(out, ": Illegal number: ", 18);
 			write(out, strf[1], _strlen(strf[1]));
 			write(out, "\n", 1);
+			freestr(strf, strRecd);
 			exit(2);
 		}
 		i = _atoi(strf[1]);

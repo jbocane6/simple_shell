@@ -42,7 +42,7 @@ int readline(char **lineptr, int *lineptrSize);
 /* statPath - recieve the command with or without i'ts path and */
 int statPath(char **strfather, int loops);
 /* callExe - fork a child to avoid execve to terminate main process */
-int callExe(char **strfather);
+int callExe(char **strfather, int);
 /* *get_environ - obtain path and include environ  */
 char *get_environ(char *pathName);
 /* *combine - complete the process of concat path with command and free */
