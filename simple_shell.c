@@ -1,9 +1,10 @@
 #include "holberton.h"
 
 /**
- * main - receive a line of strings, set in the prompt, 
+ * main - receive a line of strings, set in the prompt,
  * line of strings is checked, compares is it built-in or not,
- * check path, validate output in the main function, and display output of command.
+ * check path, validate output in the main function, and display
+ * output of command.
  * Return: reference output for end of program.
  */
 int main(void)

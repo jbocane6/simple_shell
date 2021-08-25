@@ -25,7 +25,7 @@ char *move_last_until(char *string, char last)
 
 /**
  * _strlen - count the characters of string and return size
- * @s: pointer to string char variable 
+ * @s: pointer to string char variable
  * Return: return size of s of 0 if it is void
  */
 int _strlen(char *s)
@@ -35,7 +35,7 @@ int _strlen(char *s)
 
 /**
  * _atoi - convert the string to number
- * @s: pointer to string char variable 
+ * @s: pointer to string char variable
  * Return: return number
  */
 int _atoi(char *s)

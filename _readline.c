@@ -52,11 +52,11 @@ char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size)
 }
 
 /**
- * readline - read and check characters of string to assign 
+ * readline - read and check characters of string to assign
  * dynamic memory
  * @lineptr: double pointer type char that contents the strings
- * @lineptrsize: pointer type int that contents size of strings
- * Return: return string variable lineptr with ending 
+ * @lineptrSize: pointer type int that contents size of strings
+ * Return: return string variable lineptr with ending
  * character '\0'
  */
 int readline(char **lineptr, int *lineptrSize)

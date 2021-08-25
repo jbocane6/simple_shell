@@ -7,10 +7,8 @@
  */
 void print_number(int n)
 {
-	int n1 = n;
-	int arr[sizeof(int) * 8];
-	int i = 0;
-	int j, r;
+	int n1 = n, i = 0, j, r, arr[sizeof(int) * 8];
+	char c;
 
 	if (n != 0)
 	{
@@ -25,13 +23,13 @@ void print_number(int n)
 		{
 			if (n1 < -2147483647)
 			{
-				int val = arr[j] * -1;
-
-				_putchar(val + '0');
+				c = (arr[j] * -1) + '0';
+				write(out, &c, 1);
 			}
 			else
 			{
-				_putchar(arr[j] + '0');
+				c = arr[j] + '0';
+				write(out, &c, 1);
 			}
 		}
 	}
@@ -40,7 +38,9 @@ void print_number(int n)
 /**
  * statPath - recieve the command with or without i'ts path and
  * return the call to the function callExe (execve)
- * @strfather: double pointer type char type parent to be evaluated
+ * @strfather: double pointer to string char variable with command tokenized
+ * @loops: int variable that contains amount of iterations
+ * @flag: value of type numeric
  * Return: return call to the function or 1 if it fails
  */
 int statPath(char **strfather, int loops, int flag)

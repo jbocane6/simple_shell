@@ -2,30 +2,38 @@
 
 extern char **environ;
 
-int validateMainFunctions(char **strfather, char *strReceived, int character, int loops)
+/**
+ * validateMainFunctions - verifies if the command is built-in
+ * @strf: double pointer to string char variable tokenized
+ * @strRecd: pointer to char variable string before tokenized
+ * @chars: amount of characters received in the getline
+ * @loo: number of interations made by user
+ * Return: return 1 or call to statPath
+ */
+int validateMainFunctions(char **strf, char *strRecd, int chars, int loo)
 {
-	int i = character;
+	int i = chars;
 
-	if (strcmp(strfather[0], "exit") == 0)
+	if (strcmp(strf[0], "exit") == 0)
 	{
 		if (i > 1)
 		{
-			i = _atoi(strfather[1]);
-			freestr(strfather, strReceived);
+			i = _atoi(strf[1]);
+			freestr(strf, strRecd);
 			exit(i);
 		}
 		else
 		{
-			freestr(strfather, strReceived);
+			freestr(strf, strRecd);
 			exit(0);
 		}
 	}
-	if (strcmp(strfather[0], "cd") == 0)
+	if (strcmp(strf[0], "cd") == 0)
 	{
-		chdir(strfather[1]);
+		chdir(strf[1]);
 		return (1); /*no es exit?*/
 	}
-	if (strcmp(strfather[0], "env") == 0)
+	if (strcmp(strf[0], "env") == 0)
 	{
 		for (i = 0; environ[i]; i++)
 		{
@@ -34,9 +42,14 @@ int validateMainFunctions(char **strfather, char *strReceived, int character, in
 		}
 		return (1); /*no es exit?*/
 	}
-	return (statPath(strfather, loops, 0));
+	return (statPath(strf, loo, 0));
 }
 
+/**
+ * *get_environ - obtain path and include environ
+ * @pathName: pointer to char variable with "PATH"
+ * Return: return path found in environ or NULL
+ */
 char *get_environ(char *pathName)
 {
 	int i = 0, j = 0;
