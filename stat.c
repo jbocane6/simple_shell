@@ -74,6 +74,7 @@ int statPath(char **strfather, int loops)
  * callExe - fork a child to avoid execve to terminate main process
  * when run the commands
  * @strfather: double pointer type char type parent to be evaluated
+ * @validate: Validate built-in
  * Return: if child wasn't created return -1, 1 if  it was succeed
  */
 int callExe(char **strfather, int validate)
