@@ -17,7 +17,7 @@
 #define SIZE_NULL (1)
 #define out STDOUT_FILENO
 #define in STDIN_FILENO
-#define DELIM " \""
+#define DELIM " "
 
 extern char **environ;
 
