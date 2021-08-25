@@ -33,7 +33,38 @@ shell function project performed by Andrés Felipe Castañeda, Juan Bocanegra  &
   * Files should end with a new line  
   * No global variables allowed  
 
-
+### List of allowed functions and system calls
+access (man 2 access)
+chdir (man 2 chdir)
+close (man 2 close)
+closedir (man 3 closedir)
+execve (man 2 execve)
+exit (man 3 exit)
+_exit (man 2 _exit)
+fflush (man 3 fflush)
+fork (man 2 fork)
+free (man 3 free)
+getcwd (man 3 getcwd)
+getline (man 3 getline)
+getpid (man 2 getpid)
+isatty (man 3 isatty)
+kill (man 2 kill)
+malloc (man 3 malloc)
+open (man 2 open)
+opendir (man 3 opendir)
+perror (man 3 perror)
+read (man 2 read)
+readdir (man 3 readdir)
+signal (man 2 signal)
+stat (__xstat) (man 2 stat)
+lstat (__lxstat) (man 2 lstat)
+fstat (__fxstat) (man 2 fstat)
+strtok (man 3 strtok)
+wait (man 2 wait)
+waitpid (man 2 waitpid)
+wait3 (man 2 wait3)
+wait4 (man 2 wait4)
+write (man 2 write)
 
 **C files**  
 
@@ -80,3 +111,53 @@ For better understanding you can access the logic behind the program as follows:
 
 
 <flowchart _printmod>
+
+## Examples output Command
+**Example 1**
+```
+Username@your-regular-prompt:~$ ./hsh
+$ pwd
+/home/username/
+$ ^D
+Username@your-regular-prompt:~$
+```
+**Example 2**
+```
+Username@your-regular-prompt:~$ ./hsh
+$ ls -l /tmp 
+total 32
+drwxrwxrwt 2 root  root  4096 Aug 25 09:48 VMwareDnD
+-rw------- 1 david david    0 Aug 25 09:48 config-err-s3YwHE
+drwx------ 2 david david 4096 Aug 25 09:48 ssh-Ppgn6h3jc6sn
+drwx------ 3 root  root  4096 Aug 25 09:48 systemd-private-0bde9b23c6e84583bcac785b52a31f5e-ModemManager.service-r7gSkf
+drwx------ 3 root  root  4096 Aug 25 09:49 systemd-private-0bde9b23c6e84583bcac785b52a31f5e-colord.service-RhWvhg
+drwx------ 3 root  root  4096 Aug 25 09:48 systemd-private-0bde9b23c6e84583bcac785b52a31f5e-systemd-logind.service-NzQp8h
+drwx------ 3 root  root  4096 Aug 25 09:48 systemd-private-0bde9b23c6e84583bcac785b52a31f5e-systemd-resolved.service-VYkvQg
+drwx------ 3 root  root  4096 Aug 25 09:48 systemd-private-0bde9b23c6e84583bcac785b52a31f5e-systemd-timesyncd.service-b5oJUf
+drwx------ 3 root  root  4096 Aug 25 09:49 systemd-private-0bde9b23c6e84583bcac785b52a31f5e-upower.service-xgNMih
+$ ^D
+Username@your-regular-prompt:~$
+```
+### Exmples Builtin
+
+**Example env and exit**
+Username@your-regular-prompt:~$ ./hsh
+$ env
+SHELL=/bin/bash
+SESSION_MANAGER=local/david-VirtualBox:@/tmp/.ICE-unix/876,unix/david-VirtualBox:/tmp/.ICE-unix/876
+WINDOWID=71303171
+QT_ACCESSIBILITY=1
+COLORTERM=truecolor
+XDG_CONFIG_DIRS=/etc/xdg/xdg-xubuntu:/etc/xdg:/etc/xdg
+XDG_SESSION_PATH=/org/freedesktop/DisplayManager/Session0
+XDG_MENU_PREFIX=xfce-
+TERM_PROGRAM_VERSION=1.59.1
+..
+$ exit
+Username@your-regular-prompt:~$
+
+
+### AUTHORS
+Juan Bocanegra
+Andres Castañeda
+Juan Latorre

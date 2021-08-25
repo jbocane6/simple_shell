@@ -8,44 +8,92 @@ hsh - a simple interpreter line command sh
 Command [options] [file]
 
 .SH DESCRIPTION
-mainSHell - is the standart command interpreter that is invoked for the 
-system, this version is 1.0.
+hsh - is the standart command interpreter that is invoked for the 
+system, receive a argument command to perform action, need a [option] to configurate
+parameters for especial configurations, and files/directories to be displayed or manipulated 
+, this version is 1.0.
 
 .B Overview
 the shell is a command interpreter that execute commands read from the line
 of string, standart input or specified file, the program ensure that the
 command is executed in the correct path.
+
+.SH Return 
+return 0 and display the command if is succeed, 1 or -1 if the program has someone error.
+ 
+someone more has display: exit (0) if the exit succeed, exit (2) if the argument is number negative
+and display other number with exit to terminate programm.
+
 .br 
 .SH USAGE
-below, can find some built-in options.
+below, can find some built-in and non built-in options.
 
-     ls - [list] list files ordered.
-.Pp   
-     pwd - [Print working directory] print the path of the working directory
-
-.B Built-in
-when not found executable, instead of an external executable
-     cd - [change directory] allows moving between directories.
-.Pp   
-     env - [environ] display environment variables.
-.Pp
-     exit - [exit] The exit command exits the current shell. 0 status value
-     for successful execution.
 .br
+.Pp
+.B ls 
+- [list] list files ordered.
+
+.Bl
+.Pp
+.br 
+.B pwd 
+- [Print working directory] print the path of the working directory.
+
+
+.Bl
+.Pp
+.br 
+.B Built-in
+     when not found executable, instead of an external executable.
+
+.Bl
+.Pp
+.br
+.B cd
+- [change directory] allows moving between directories.
+
+.Bl
+.Pp 
+.br  
+.B env
+- [environ] display environment variables.
+
 .Bl 
+.Pp
+.B     exit 
+- [exit] The exit command exits the current shell. 0 status value
+for successful execution.
+.Bl
 .SH RUN hsh
-GCC command to compile: gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+for run this program you need.
+.Pp
+.B   GCC command to compile: gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
 .SH EXAMPLES
-Example
+
+Examples to combination of commands below.
 .br 
 
 .B   ls -la 
 .Pp  
 .Bl
-     list all files in de corrent directory and display in a long format
-     hiden files
+     list all files in de current directory, display in a long format and show
+     hiden files.
 
+.Pp
+.br 
+.B     ls -l
+.Pp
+     list all files in the current directory and display in a long format all files or directories.
+
+.Pp
+.br 
+.B cd /
+     change to directory root.
+
+.Pp
+.br
+.B 
 .SH BUGS
 unknow BUGS
 
