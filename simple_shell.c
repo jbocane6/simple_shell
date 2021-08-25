@@ -30,5 +30,5 @@ int main(void)
 			freestr(strfather, strReceived);
 		loops++;
 	}
-	return (EXIT_SUCCESS);
+	exit(EXIT_SUCCESS);
 }
