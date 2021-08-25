@@ -65,7 +65,7 @@ shell function project performed by Andrés Felipe Castañeda, Juan Bocanegra  &
   * wait3 (man 2 wait3)
   * wait4 (man 2 wait4)
   * write (man 2 write)
-  
+
 **C files**  
 
 
@@ -73,16 +73,16 @@ shell function project performed by Andrés Felipe Castañeda, Juan Bocanegra  &
 holberton.h: This file contains prototypes for all the functions and the struct for data and function relation.  
 
 **Man-page**  
-man_3_simple_shell : .
+man_1_simple_shell : .
 
-To access the Man Page. ` man_3_simple_shell ` directly in a terminal, download the file and move it to the directory /usr/share/man/man1 where the system stores man pages for User shell commands.  
-You can view it by typing the following command: ` cd  /usr/share/man/man1 `  Otherwise into the project directory by typing `./man_3_simple_shell `..  
+To access the Man Page. ` man_1_simple_shell ` directly in a terminal, download the file and move it to the directory /usr/share/man/man1 where the system stores man pages for User shell commands.  
+You can view it by typing the following command: ` man `  Otherwise into the project directory by typing `./man_1_simple_shell `..
 
 
 ### How to use this project
   1. Please clone this repo into your sandbox or local terminal.  
-  2. Access to the directory and compile all C files with the command: ` gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c - o simple_shell ` ( simple_shell is a suggested name, not mandatory)  
-  3. Typing ./simple_shell shows all cases set in the ` main.c ` file. 
+  2. Access to the directory and compile all C files with the command: ` gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c - o hsh ` ( hsh is a suggested name, not mandatory)  
+  3. Typing ./hsh shows all cases set in the ` main.c ` file. 
   4. For another test, please modify the main.c file considering the man-page description.  
 
 Example of main.c file:
