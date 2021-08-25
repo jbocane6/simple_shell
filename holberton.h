@@ -16,6 +16,7 @@
 #define SIZE_SLASH (1)
 #define SIZE_NULL (1)
 #define out STDOUT_FILENO
+#define in STDIN_FILENO
 #define DELIM " \""
 
 extern char **environ;
@@ -39,7 +40,7 @@ char **_strtok(char *str, char *delim);
 /* readline - read and check characters of string to assign */
 int readline(char **lineptr, int *lineptrSize);
 /* statPath - recieve the command with or without i'ts path and */
-int statPath(char **strfather, int, int);
+int statPath(char **strfather, int loops);
 /* callExe - fork a child to avoid execve to terminate main process */
 int callExe(char **strfather);
 /* *get_environ - obtain path and include environ  */
@@ -62,5 +63,8 @@ void freestr(char **strfather, char *strReceived);
 char *move_last_until(char *string, char last);
 /*print_number - called to main()*/
 void print_number(int n);
+/*_strcmp - compares 2 strings and say if are equals*/
+int _strcmp(char *str1, char *str2);
+int _strstrlen(char **s);
 
 #endif

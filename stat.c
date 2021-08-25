@@ -40,10 +40,9 @@ void print_number(int n)
  * return the call to the function callExe (execve)
  * @strfather: double pointer to string char variable with command tokenized
  * @loops: int variable that contains amount of iterations
- * @flag: value of type numeric
  * Return: return call to the function or 1 if it fails
  */
-int statPath(char **strfather, int loops, int flag)
+int statPath(char **strfather, int loops)
 {
 	struct stat st;
 	/* validate if deault command is absolute path */
@@ -55,9 +54,9 @@ int statPath(char **strfather, int loops, int flag)
 	else
 	{
 		strfather[0] = combine(strfather[0], _strtok(get_environ("PATH"), ":"));
-		if (strfather[0] && !flag)
+		if (stat(strfather[0], &st) == 0)
 		{
-			return (statPath(strfather, loops, 1));
+			return (callExe(strfather));
 		}
 		else
 		{
@@ -68,7 +67,7 @@ int statPath(char **strfather, int loops, int flag)
 			write(1, ": not found\n", 12);
 		}
 	}
-	return (1);
+	return (0);
 }
 
 /**
@@ -80,6 +79,7 @@ int statPath(char **strfather, int loops, int flag)
 int callExe(char **strfather)
 {
 	char stringDir[1024];
+	int st = 0;
 	pid_t child;
 
 	child = fork();
@@ -98,7 +98,9 @@ int callExe(char **strfather)
 		exit(0);
 	}
 	else
-		wait(0);
-
+	{
+		wait(&st);
+		return (WEXITSTATUS(st));
+	}
 	return (0);
 }

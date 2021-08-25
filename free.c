@@ -10,7 +10,6 @@ void arrayFree(char **array)
 	{
 		arrayFree(array + 1);
 		free(*array);
-		/*return;*/
 	}
 }
 

@@ -7,8 +7,8 @@
  */
 void ctrap(int sig)
 {
-	write(1, "\n", sig - 1);
-	write(1, "$ ", 2);
+	if (isatty(in))
+		write(out, "\n$ ", sig + 2);
 }
 
 /**
@@ -65,7 +65,9 @@ int readline(char **lineptr, int *lineptrSize)
 	char character = 0;
 
 	(void)signal(SIGINT, ctrap);
-	/*write(1, "$ ", 2);*/
+	if (isatty(in))
+		write(out, "$ ", 2);
+
 	*lineptr = malloc(sizeof(char) * *lineptrSize);
 	if (!lineptr)
 		return (-1);
@@ -86,5 +88,6 @@ int readline(char **lineptr, int *lineptrSize)
 		}
 	}
 	(*lineptr)[i - 1] = '\0';
+	/* fflush(stdout); */
 	return (i - 1);
 }

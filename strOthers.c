@@ -46,3 +46,35 @@ int _atoi(char *s)
 		numero = (numero * 10) + (s[i] - '0');
 	return (numero);
 }
+
+/**
+ * _strcmp - compares 2 strings and say if are equals
+ * @str1: pointer to string char variable
+ * @str2: pointer to string char variable
+ * Return: 0 if are equal, 1 if are different or if it fails
+ */
+int _strcmp(char *str1, char *str2)
+{
+	int i;
+
+	if (!str1 || !str2 || _strlen(str1) != _strlen(str2))
+		return (1);
+
+	for (i = 0; str1[i]; i++)
+	{
+		if (str1[i] != str2[i])
+			return (1);
+	}
+
+	return (0);
+}
+
+/**
+ * _strstrlen - count the strings of a double pointer to char and return size
+ * @s: pointer to double pointer string
+ * Return: return size of s of 0 if it is void
+ */
+int _strstrlen(char **s)
+{
+	return (*s != NULL ? 1 + _strstrlen(s + 1) : 0);
+}

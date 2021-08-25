@@ -66,7 +66,7 @@ char *combine(char *command, char **splitPath)
 	struct stat st;
 	char *commandCombine;
 
-	while (splitPath[i])
+	while (i < _strstrlen(splitPath) - 1)
 	{
 		commandCombine = concatPlusPlus(3, splitPath[i], "/", command);
 		if (!commandCombine)

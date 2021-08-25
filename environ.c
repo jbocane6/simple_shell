@@ -12,7 +12,7 @@ int validateMainFunctions(char **strf, char *strRecd, int chars, int loo)
 {
 	int i = chars;
 
-	if (strcmp(strf[0], "exit") == 0)
+	if (_strcmp(strf[0], "exit") == 0)
 	{
 		if (i > 1)
 		{
@@ -26,21 +26,21 @@ int validateMainFunctions(char **strf, char *strRecd, int chars, int loo)
 			exit(0);
 		}
 	}
-	if (strcmp(strf[0], "cd") == 0)
+	if (_strcmp(strf[0], "cd") == 0)
 	{
 		chdir(strf[1]);
-		return (1);
+		exit(0);
 	}
-	if (strcmp(strf[0], "env") == 0)
+	if (_strcmp(strf[0], "env") == 0)
 	{
 		for (i = 0; environ[i]; i++)
 		{
 			write(out, environ[i], _strlen(environ[i]));
 			write(out, "\n", 1);
 		}
-		return (1);
+		exit(0);
 	}
-	return (statPath(strf, loo, 0));
+	return (statPath(strf, loo));
 }
 
 /**
