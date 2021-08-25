@@ -17,6 +17,8 @@ int main(void)
 
 		flag = 1;
 		character = readline(&strReceived, &size);
+		if (character == 0)
+			flag = 0;
 		if (character > 0)
 		{
 			character = count_words(DELIM, strReceived);
