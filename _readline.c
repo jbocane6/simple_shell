@@ -100,6 +100,5 @@ int readline(char **lineptr, int *lineptrSize)
 		(*lineptr)[0] = '\0';
 		return (0);
 	}
-	/* fflush(stdin); */
 	return (i - 1);
 }
