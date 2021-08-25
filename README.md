@@ -141,6 +141,7 @@ Username@your-regular-prompt:~$
 ### Exmples Builtin
 
 **Example env and exit**
+```
 Username@your-regular-prompt:~$ ./hsh
 $ env
 SHELL=/bin/bash
@@ -155,9 +156,8 @@ TERM_PROGRAM_VERSION=1.59.1
 ..
 $ exit
 Username@your-regular-prompt:~$
+```
 
 
 ### AUTHORS
-Juan Bocanegra
-Andres Castañeda
-Juan Latorre
+Juan Bocanegra, Andres Castañeda, Juan Latorre.
