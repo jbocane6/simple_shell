@@ -1,7 +1,5 @@
 #include "holberton.h"
 
-extern char **environ;
-
 /**
  * validateMainFunctions - verifies if the command is built-in
  * @strf: double pointer to string char variable tokenized

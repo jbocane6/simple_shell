@@ -18,6 +18,8 @@
 #define out STDOUT_FILENO
 #define DELIM " \""
 
+extern char **environ;
+
 /* _strlen - count the characters of string and return size */
 int _strlen(char *s);
 /* _strcat - concatenates two strings */

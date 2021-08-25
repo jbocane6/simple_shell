@@ -16,13 +16,18 @@ int main(void)
 		char *strReceived = NULL, **strfather = NULL;
 
 		character = readline(&strReceived, &size);
+		if (character < 0)
+		{
+			return (-1);
+		}
 		if (character > 0)
 		{
 			character = count_words(DELIM, strReceived);
 			strfather = _strtok(strReceived, DELIM);
 			flag = validateMainFunctions(strfather, strReceived, character, loops);
 		}
-		freestr(strfather, strReceived);
+		if (flag > 0 && flag < 2)
+			freestr(strfather, strReceived);
 		loops++;
 	}
 	return (flag);
