@@ -1,4 +1,4 @@
-.TH hsh()  "1.0"  "shell man page"
+.TH hsh()  "man 1"  "25 August 2021"
 
 .SH SIMPLE_SHELL
 hsh - a simple interpreter line command sh
