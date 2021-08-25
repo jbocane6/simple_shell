@@ -29,7 +29,7 @@ int validateMainFunctions(char **strf, char *strRecd, int chars, int loo)
 	if (strcmp(strf[0], "cd") == 0)
 	{
 		chdir(strf[1]);
-		return (1); /*no es exit?*/
+		return (1);
 	}
 	if (strcmp(strf[0], "env") == 0)
 	{
@@ -38,7 +38,7 @@ int validateMainFunctions(char **strf, char *strRecd, int chars, int loo)
 			write(out, environ[i], _strlen(environ[i]));
 			write(out, "\n", 1);
 		}
-		return (1); /*no es exit?*/
+		return (1);
 	}
 	return (statPath(strf, loo, 0));
 }

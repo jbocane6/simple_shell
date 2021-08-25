@@ -100,5 +100,5 @@ int callExe(char **strfather)
 	else
 		wait(0);
 
-	return (1);
+	exit(0);
 }
