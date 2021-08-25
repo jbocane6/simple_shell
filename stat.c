@@ -93,7 +93,7 @@ int callExe(char **strfather)
 		stringDir[0] = '\0';
 		_strcat(stringDir, strfather[0]);
 		strfather[0] = move_last_until(strfather[0], '/');
-		if (execve(stringDir, strfather, NULL) == -1)
+		if (execve(stringDir, strfather, environ) == -1)
 			perror("Error");
 		exit(0);
 	}
