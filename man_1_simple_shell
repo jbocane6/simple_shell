@@ -1,7 +1,7 @@
-.TH mainSHell()  "1.0"  "shell man page"
+.TH hsh()  "1.0"  "shell man page"
 
 .SH SIMPLE_SHELL
-mainSHell - a simple interpreter line command sh
+hsh - a simple interpreter line command sh
 
 .SH SYNOPSIS
 
@@ -13,33 +13,38 @@ system, this version is 1.0.
 
 .B Overview
 the shell is a command interpreter that execute commands read from the line
- of string, standart input or specified file, the program ensure that the
- command is executed in the correct path.
-
-.SH Usage
+of string, standart input or specified file, the program ensure that the
+command is executed in the correct path.
+.br 
+.SH USAGE
 below, can find some built-in options.
 
      ls - [list] list files ordered.
-.br 
+.Pp   
      pwd - [Print working directory] print the path of the working directory
-.br 
-.B Built-in
 
+.B Built-in
+when not found executable, instead of an external executable
      cd - [change directory] allows moving between directories.
-.br 
+.Pp   
      env - [environ] display environment variables.
-.br
+.Pp
      exit - [exit] The exit command exits the current shell. 0 status value
-      for successful execution.
-.br   
+     for successful execution.
+.br
+.Bl 
+.SH RUN hsh
+GCC command to compile: gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
 .SH EXAMPLES
+Example
+.br 
 
 .B   ls -la 
-
-.br 
+.Pp  
+.Bl
      list all files in de corrent directory and display in a long format
-      hiden files
+     hiden files
 
 .SH BUGS
 unknow BUGS
