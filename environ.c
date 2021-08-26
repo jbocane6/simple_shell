@@ -83,6 +83,16 @@ int validateMainFunctions(char **strf, char *strRecd, int chars, int loo)
 		}
 		return (0);
 	}
+	if ((_strcmp(strf[0], "ls") == 0 || _strcmp(strf[0], "hbtn_ls") == 0)
+	&& !environ)
+	{
+		write(out, "./hsh: ", 7);
+		print_number(loo);
+		write(out, ": ", 2);
+		write(out, strf[0], _strlen(strf[0]));
+		write(out, ": not found\n", 12);
+		exit(127);
+	}
 	return (statPath(strf, loo));
 }
 
